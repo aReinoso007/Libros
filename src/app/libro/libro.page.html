@@ -1,9 +1,31 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>libro</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{libro.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item text-wrap >
+    <ion-row class="catagory">
+      <ion-col>
+        <img src="{{libro.url}}" alt="foodname">
+      </ion-col>
+      <ion-col col-6>
+        <p class="item-name">{{libro.titulo}}</p>
+        <p class="item-detail" text-wrap>
+          <span>{{libro.descripcion}}</span>
+        </p>
+
+        <p class="item-detail">{{"Estado" }}
+          <span class="item-price">{{libro.estado}}
+          </span>
+      </p>
+      <ion-button shape="round" fill="outline" expand="full" (click) ="reservarLibro()">Reservar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
 
 </ion-content>

@@ -19,7 +19,8 @@ export class ListaPage implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.listarLibros();
+    console.log("descripcion ", this.libros);
   }
 
   listarLibros(){
