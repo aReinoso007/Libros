@@ -20,6 +20,7 @@ export class LibroPage implements OnInit {
    }
 
   ngOnInit() {
+    this.getLibro(this.uid);
   }
 
   getLibro(uid: string){
@@ -27,6 +28,13 @@ export class LibroPage implements OnInit {
     .subscribe(data =>{
       this.libro = JSON.parse(JSON.stringify(data));
     })
+  }
+
+  reservarLibro(){
+    this.libService.reservar(this.libro.uid, true);
+    alert("Libro reservado con exito");
+    this.getLibro(this.libro.uid);
+
   }
 
 }
