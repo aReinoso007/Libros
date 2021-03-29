@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Libro } from '../model/libro';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,10 @@ export class LibrosService {
   getLibroById(uid: string): Observable<any>{
     let itemDoc = this.afs.doc<any>(`libros/${uid}`);
     return itemDoc.valueChanges();
+  }
+
+  reservar(uid: string, estado: boolean){
+    var db = firebase.default.firestore();
+    db.collection("libros").doc(uid).update({estado: `${estado}`});
   }
 }
