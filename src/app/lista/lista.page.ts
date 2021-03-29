@@ -11,7 +11,7 @@ import { LibrosService } from '../services/libros.service';
 export class ListaPage implements OnInit {
 
   libros: Libro[];
-  estado: string;
+  estado: string = "Reservado";
   constructor(
     private libService: LibrosService,
     private route: ActivatedRoute,
