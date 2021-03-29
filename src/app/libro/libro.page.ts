@@ -11,6 +11,7 @@ import { LibrosService } from '../services/libros.service';
 export class LibroPage implements OnInit {
   libro: Libro = new Libro();
   uid: string;
+  estado: string;
   constructor(
     private libService: LibrosService,
     private router: Router,
@@ -28,6 +29,11 @@ export class LibroPage implements OnInit {
     .subscribe(data =>{
       this.libro = JSON.parse(JSON.stringify(data));
     })
+    if(this.libro.estado != true){
+      this.estado = "Reservado";
+    }else{
+      this.estado = "Disponible";
+    }
   }
 
   reservarLibro(){
