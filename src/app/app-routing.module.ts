@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./lista/lista.module').then( m => m.ListaPageModule)
   },
   {
-    path: 'libro',
+    path: 'libro/:uid',
     loadChildren: () => import('./libro/libro.module').then( m => m.LibroPageModule)
   }
 ];
