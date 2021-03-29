@@ -4,6 +4,5 @@ export class Libro{
     nombreAutor: string;
     descripcion: string;
     url: string;
-    stockTotal: number;
-    stockActual: number;
+    estado: boolean;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Libro } from '../model/libro';
+import { LibrosService } from '../services/libros.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroPage implements OnInit {
 
-  constructor() { }
+  libro: Libro = new Libro();
 
-  ngOnInit() {
+  constructor(
+    private libService: LibrosService
+    ) { }
+
+  ngOnInit( ) {
   }
 
+  registrarLibro(){
+    this.libro.estado = false;
+    this.libService.registrarLibro(this.libro);
+    this.libro = new Libro();
+    alert("Registro exitoso");
+  }
 }
