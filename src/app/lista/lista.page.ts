@@ -14,7 +14,6 @@ export class ListaPage implements OnInit {
   estado: string = "Reservado";
   constructor(
     private libService: LibrosService,
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 

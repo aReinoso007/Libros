@@ -22,14 +22,21 @@ export class LibroPage implements OnInit {
 
   ngOnInit() {
     this.getLibro(this.uid);
+    console.log("Estado del libro: ", this.libro.estado);
+    console.log("libro: ", this.libro[0]);
+    if(this.libro.estado == true){
+      this.estado = "Reservado";
+    }else{
+      this.estado = "Disponible";
+    }
   }
 
   getLibro(uid: string){
     this.libService.getLibroById(uid)
     .subscribe(data =>{
       this.libro = JSON.parse(JSON.stringify(data));
-    })
-    if(this.libro.estado != true){
+    });
+    if(this.libro.estado == true){
       this.estado = "Reservado";
     }else{
       this.estado = "Disponible";

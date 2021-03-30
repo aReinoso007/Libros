@@ -23,7 +23,7 @@
           <span class="item-price">{{estado}}
           </span>
       </p>
-      <ion-button shape="round" fill="outline" expand="full" *ngIf="libro.estado == false" (click) ="reservarLibro()">Reservar</ion-button>
+      <ion-button shape="round" fill="outline" expand="full" *ngIf="libro.estado == true" (click) ="reservarLibro()">Reservar</ion-button>
       </ion-col>
     </ion-row>
   </ion-item>

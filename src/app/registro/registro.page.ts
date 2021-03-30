@@ -19,7 +19,7 @@ export class RegistroPage implements OnInit {
   }
 
   registrarLibro(){
-    this.libro.estado = false;
+    this.libro.estado = true;
     this.libService.registrarLibro(this.libro);
     this.libro = new Libro();
     alert("Registro exitoso");
